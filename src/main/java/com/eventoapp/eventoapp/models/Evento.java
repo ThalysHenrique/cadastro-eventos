@@ -1,6 +1,7 @@
 package com.eventoapp.eventoapp.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -13,9 +14,13 @@ public class Evento implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long codigo;
+    @NotEmpty
     private String nome;
+    @NotEmpty
     private String local;
+    @NotEmpty
     private String data;
+    @NotEmpty
     private String horario;
 
     @OneToMany
